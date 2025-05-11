@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "title": "Clean Water for All",
+    "description": "Help build clean water systems for communities in need. Access to clean water changes everything: improved health, increased access to food, better education, and women's empowerment.",
+    "status": "ongoing",
+    "goal": 1000,
+    "raised": 450,
+    "image": "https://images.unsplash.com/photo-1519500648579-6d6be981b1a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 2,
+    "title": "Save the Ocean Campaign",
+    "description": "Join our mission to clean up ocean plastics and protect marine life through education and direct action across coastal communities.",
+    "status": "ongoing",
+    "goal": 2500,
+    "raised": 1200,
+    "image": "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 3,
+    "title": "Community Garden Project",
+    "description": "Help us create a sustainable community garden that provides fresh food and educational opportunities for local families.",
+    "status": "ongoing",
+    "goal": 800,
+    "raised": 350,
+    "image": "https://images.unsplash.com/photo-1605600659873-695a85c49f88?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 4,
+    "title": "Tech Education for Kids",
+    "description": "Provide coding and technology workshops for underprivileged children to help prepare them for future careers in tech.",
+    "status": "recent",
+    "goal": 1500,
+    "raised": 1500,
+    "image": "https://images.unsplash.com/photo-1601807576163-587225545555?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 5,
+    "title": "Homeless Shelter Support",
+    "description": "Help us provide meals, clothing, and essential services to those experiencing homelessness in our community.",
+    "status": "recent",
+    "goal": 2000,
+    "raised": 1900,
+    "image": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 6,
+    "title": "Animal Rescue Center",
+    "description": "Support our efforts to rescue, rehabilitate, and rehome abandoned and injured animals in our community.",
+    "status": "ended",
+    "goal": 1200,
+    "raised": 1100,
+    "image": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 7,
+    "title": "Healthcare for Children",
+    "description": "Provide medical care and vaccinations for children in underserved communities around the world.",
+    "status": "ended",
+    "goal": 3000,
+    "raised": 3000,
+    "image": "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+  }
+]

@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.inputs{
+    @apply border-gray-300 border-2 rounded p-1
+}
+.h1{
+    @apply text-4xl font-bold ;
+
+}
+.color{
+  @apply text-[#348cff];
+}
+.bg-color{
+  @apply bg-[#348cff];
+}
+
+.h2{
+    @apply text-2xl font-bold  ;
+}
+
+.h3{
+    @apply text-sm font-bold  ;
+}
+
+.button{
+    @apply   bg-[#348cff] text-white font-semibold py-2 px-4 rounded cursor-pointer;
+}
+
+.p1{
+    @apply  text-gray-600;
+}
+
+.center{
+    @apply flex justify-center items-center;
+}
+.hover-effect-normal{
+@apply  hover:transform hover:scale-105 cursor-pointer;
+}
+.user-image{
+    @apply w-8 h-8 object-cover p-1 cursor-pointer hover:bg-[#348cff] rounded;
+    @apply transition-all duration-200 ease-in;
+}
+
+.nav-items-mobile{
+  @apply shrink border-b-2 border-gray-200 shadow-sm  px-2 py-4;
+}
