@@ -52,7 +52,7 @@ function Navbar() {
          {/* Hamburger menu items which will only show on smaller devices*/}
       {hamburgerOpen && (
         
-        <div className="Navigation flex flex-col  bg-gray-100 rounded w-full mt-5">
+        <div className="Navigation flex flex-col  bg-gray-100  w-full ">
          
           <Link
             to="/"
@@ -90,7 +90,7 @@ function Navbar() {
 
       {/* Fake navbar for the problem facing for fixed navbar */}
     <section className="FakeNavbar">
-      <div className=" w-100% bg-white p-9 "></div>
+      <div className=" w-100% bg-white p-7 "></div>
     </section>
     </>
     

@@ -12,6 +12,7 @@ import Campaigns from "./Components/Campaigns.jsx";
 import About from "./Components/About.jsx";
 import Contact from "./Components/Contact.jsx";
 import News from "./Components/News.jsx";
+import { NewsProvider } from "./Context/NewsContext.jsx"; 
 
 
 const router = createBrowserRouter([
@@ -42,5 +43,10 @@ const router = createBrowserRouter([
 const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
-  <RouterProvider router={router} />
+<NewsProvider>
+<RouterProvider router={router} />
+</NewsProvider>
+
+
+  
 );

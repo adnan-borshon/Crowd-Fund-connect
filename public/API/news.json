@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "New Library Opens",
+        "date": "2025-05-10",
+        "description": "The university library reopened after renovations, now offering extended hours and digital resources."
+    },
+    {
+        "id": 2,
+        "title": "Tech Conference 2025 Announced",
+        "date": "2025-06-15",
+        "description": "Annual tech conference scheduled for August will feature leading experts in AI and robotics."
+    },
+    {
+        "id": 3,
+        "title": "Spring Festival Highlights",
+        "date": "2025-04-30",
+        "description": "Students celebrated the annual spring festival with music, dance performances, and food stalls."
+    },
+    {
+        "id": 4,
+        "title": "Research Grant Awarded",
+        "date": "2025-05-01",
+        "description": "Professor Smith\u2019s team received a $1.2 million grant for renewable energy research projects."
+    },
+    {
+        "id": 5,
+        "title": "Guest Lecture on Cybersecurity",
+        "date": "2025-05-12",
+        "description": "Industry expert Jane Doe will present a lecture on emerging cybersecurity trends and best practices."
+    }
+]

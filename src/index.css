@@ -18,7 +18,7 @@ body {
 }
 
 .h2{
-    @apply text-2xl font-bold  ;
+    @apply text-lg font-bold  ;
 }
 
 .h3{
@@ -39,6 +39,9 @@ body {
 .hover-effect-normal{
 @apply  hover:transform hover:scale-105 cursor-pointer;
 }
+.icon{
+  @apply h-10 w-10 object-cover p-1;
+}
 .user-image{
     @apply w-8 h-8 object-cover p-1 cursor-pointer hover:bg-[#348cff] rounded;
     @apply transition-all duration-200 ease-in;
@@ -46,4 +49,25 @@ body {
 
 .nav-items-mobile{
   @apply shrink border-b-2 border-gray-200 shadow-sm  px-2 py-4;
+}
+
+._2nd-section-lower-part{
+  @apply  flex justify-start p-3 shrink;
+}
+._2nd-section-lower-part img{
+  @apply mx-2;
+}
+._2nd-section-lower-part h2{
+@apply text-xl font-bold text-black
+}
+
+._2nd-section-lower-part p{
+@apply text-lg w-[90%] text-gray-600;
+}
+._2nd-section-lower-part div{
+@apply space-y-2 mx-2 my-1;
+}
+
+.about-sections{
+  @apply space-y-4;
 }
