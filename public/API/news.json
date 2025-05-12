@@ -1,32 +1,32 @@
 [
-    {
-        "id": 1,
-        "title": "New Library Opens",
-        "date": "2025-05-10",
-        "description": "The university library reopened after renovations, now offering extended hours and digital resources."
-    },
-    {
-        "id": 2,
-        "title": "Tech Conference 2025 Announced",
-        "date": "2025-06-15",
-        "description": "Annual tech conference scheduled for August will feature leading experts in AI and robotics."
-    },
-    {
-        "id": 3,
-        "title": "Spring Festival Highlights",
-        "date": "2025-04-30",
-        "description": "Students celebrated the annual spring festival with music, dance performances, and food stalls."
-    },
-    {
-        "id": 4,
-        "title": "Research Grant Awarded",
-        "date": "2025-05-01",
-        "description": "Professor Smith\u2019s team received a $1.2 million grant for renewable energy research projects."
-    },
-    {
-        "id": 5,
-        "title": "Guest Lecture on Cybersecurity",
-        "date": "2025-05-12",
-        "description": "Industry expert Jane Doe will present a lecture on emerging cybersecurity trends and best practices."
-    }
+  {
+    "id": 1,
+    "title": "New Library Opens",
+    "date": "2025-05-10",
+    "description": "After a comprehensive six-month renovation, the university library is once again welcoming students and faculty—this time with modern study pods, collaborative group rooms, and a state-of-the-art digital archive. Extended opening hours (now 7 AM to midnight on weekdays) ensure more flexible access, while the new online reservation system and enhanced Wi-Fi connectivity make research smoother than ever. Additional services include a multimedia production studio, 24/7 quiet study floors, and integrated academic support desks staffed by research librarians."
+  },
+  {
+    "id": 2,
+    "title": "Tech Conference 2025 Announced",
+    "date": "2025-06-15",
+    "description": "The organizers have confirmed that this year’s annual tech conference will take place August 20–22 in the main convention hall, bringing together more than 5,000 attendees from around the globe. Attendees can look forward to keynote addresses from leading AI researchers, hands-on robotics workshops, and panel discussions on ethical machine learning. The event will also feature a start-up pitch competition, tech expo showcasing cutting-edge innovations, and dedicated networking sessions designed to foster collaboration across disciplines."
+  },
+  {
+    "id": 3,
+    "title": "Spring Festival Highlights",
+    "date": "2025-04-30",
+    "description": "This year’s Spring Festival drew over 3,000 students and community members to the campus green, where colorful tents and flower arches framed a weekend of celebration. Highlights included live performances by student bands, traditional folk dances choreographed by the cultural club, and a gourmet street-food alley featuring international cuisines. Special attractions—such as the DIY craft corner, pop-up art installations, and an evening fireworks display—made the festival an unforgettable showcase of campus spirit and creativity."
+  },
+  {
+    "id": 4,
+    "title": "Research Grant Awarded",
+    "date": "2025-05-01",
+    "description": "Professor Smith’s interdisciplinary research team has been awarded a $1.2 million grant from the National Renewable Energy Council to advance next-generation solar-to-hydrogen conversion technologies. Over the next three years, the project will explore novel photocatalyst materials, integrate smart grid simulations, and partner with industrial stakeholders to pilot real-world applications. The funding also supports student fellowships, high-resolution imaging equipment, and international collaboration trips to leading energy research institutes."
+  },
+  {
+    "id": 5,
+    "title": "Guest Lecture on Cybersecurity",
+    "date": "2025-05-12",
+    "description": "On May 20, industry veteran Jane Doe—a former chief security officer at CyberGuard Inc.—will deliver an in-depth lecture on the latest cybersecurity threats and defense strategies in the university auditorium. Topics will include zero-trust architecture, threat intelligence frameworks, and practical steps for securing cloud-native applications. The session concludes with a live demonstration of penetration-testing tools and an interactive Q&A, offering invaluable insights for computer science students, IT professionals, and anyone interested in safeguarding digital assets."
+  }
 ]

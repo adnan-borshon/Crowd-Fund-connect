@@ -4,7 +4,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 .inputs{
-    @apply border-gray-300 border-2 rounded p-1
+    @apply border-gray-300 border-2 rounded p-1;
+    @apply placeholder:text-gray-500  focus:placeholder:text-gray-400 focus:text-white
 }
 .h1{
     @apply text-4xl font-bold ;
@@ -27,6 +28,7 @@ body {
 
 .button{
     @apply   bg-[#348cff] text-white font-semibold py-2 px-4 rounded cursor-pointer;
+    @apply hover:bg-white hover:text-[#348cff] hover:border hover:border-[#348cff] transition-all duration-300 ease-in-out;
 }
 
 .p1{

@@ -13,6 +13,9 @@ import About from "./Components/About.jsx";
 import Contact from "./Components/Contact.jsx";
 import News from "./Components/News.jsx";
 import { NewsProvider } from "./Context/NewsContext.jsx"; 
+import PrivacyPolicy from "./Components/PrivacyPolicy.jsx";
+import Terms from "./Components/Terms.jsx";
+
 
 
 const router = createBrowserRouter([
@@ -36,6 +39,14 @@ const router = createBrowserRouter([
         path: "/news",
         element: <News/>
        },
+             {
+        path: "/privacy-policy",
+        element: <PrivacyPolicy/>
+       },
+             {
+        path: "/terms",
+        element: <Terms/>
+       },
     ]
   },
 ]);
@@ -43,9 +54,15 @@ const router = createBrowserRouter([
 const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
+
+
 <NewsProvider>
+  
 <RouterProvider router={router} />
+ 
 </NewsProvider>
+
+
 
 
   

@@ -1,0 +1,52 @@
+{
+  "title": "Privacy Policy",
+  "version": "1.0",
+  "lastUpdated": "2025-05-12",
+  "sections": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "content": "CrowdFund Connect (“we”, “us”, or “our”) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services."
+    },
+    {
+      "id": "information_collection",
+      "title": "Information We Collect",
+      "content": "We collect information you provide directly (e.g., name, email when you register or contact us) and data automatically collected (e.g., IP address, device information, cookies)."
+    },
+    {
+      "id": "use_of_information",
+      "title": "How We Use Your Information",
+      "content": "We use your information to operate, maintain, and provide you with the features and functionality of our platform, to communicate with you, to process transactions, and to improve our services."
+    },
+    {
+      "id": "sharing_information",
+      "title": "Sharing Your Information",
+      "content": "We do not sell your personal data. We may share information with service providers, payment processors, legal authorities when required, and in connection with a merger or acquisition."
+    },
+    {
+      "id": "cookies_and_tracking",
+      "title": "Cookies and Tracking Technologies",
+      "content": "We use cookies, web beacons, and similar tracking technologies to track activity on our site and hold certain information. You can disable cookies via your browser settings."
+    },
+    {
+      "id": "data_security",
+      "title": "Data Security",
+      "content": "We implement security measures designed to protect your information. However, no electronic transmission or storage is 100% secure."
+    },
+    {
+      "id": "children_privacy",
+      "title": "Children’s Privacy",
+      "content": "Our services are not directed to persons under 13. We do not knowingly collect personal information from children under 13."
+    },
+    {
+      "id": "changes_to_policy",
+      "title": "Changes to This Privacy Policy",
+      "content": "We may update this policy from time to time. We will notify you of any material changes by posting the new policy on this page with a revised \"lastUpdated\" date."
+    },
+    {
+      "id": "contact_us",
+      "title": "Contact Us",
+      "content": "If you have questions about this policy, please contact us at privacy@crowdfundconnect.com."
+    }
+  ]
+}

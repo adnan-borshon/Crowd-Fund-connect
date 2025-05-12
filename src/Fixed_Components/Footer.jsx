@@ -6,13 +6,13 @@ import Instagram from "/Icons/instagram-logo.png";
 import LinkedIn from "/Icons/linkedin.png";
 function Footer() {
   return (
-    <section className="overflow-hidden bg-white mt-10">
+    <section className="overflow-hidden bg-[#1f2937] mt-10">
       {/* whole footer container */}
       <div className="container shrink grid lg:grid-cols-4 gap-3 p-4 border-t-2 border-b-2 border-gray-300">
         {/* About Crowd Fund part of the footer */}
         <div className="flex flex-col gap-2">
           <h2 className="h2 color">About CrowdFund Connect</h2>
-          <p className="p1 ">
+          <p className="text-gray-300 ">
            Connecting passionate donors with meaningful causes through our virtual coin platform.
           </p>
 
@@ -55,16 +55,16 @@ function Footer() {
         {/* Quick links of footer */}
         <div className="flex flex-col gap-2">
           <h2 className="h2 color">Quick Links</h2>
-          <Link to="/home" className="p1 hover-effect-normal">
+          <Link to="/home" className="text-gray-300 hover-effect-normal">
             Home
           </Link>
-          <Link to="/about" className="p1 hover-effect-normal">
+          <Link to="/about" className="text-gray-300 hover-effect-normal">
             About
           </Link>
-          <Link to="/news" className="p1 hover-effect-normal">
+          <Link to="/news" className="text-gray-300 hover-effect-normal">
             News
           </Link>
-          <Link to="/contact" className="p1 hover-effect-normal">
+          <Link to="/contact" className="text-gray-300 hover-effect-normal">
             Contact
           </Link>
         </div>
@@ -72,10 +72,10 @@ function Footer() {
         {/* Legal of footer */}
         <div className="flex flex-col gap-2">
           <h2 className="h2 color">LEGAL</h2>
-          <Link to="/privacy-policy" className="p1 hover-effect-normal">
+          <Link to="/privacy-policy" className="text-gray-300 hover-effect-normal">
             Privacy Policy
           </Link>
-          <Link to="/terms" className="p1 hover-effect-normal">
+          <Link to="/terms" className="text-gray-300 hover-effect-normal">
             Terms of Service
           </Link>
         </div>
@@ -83,7 +83,7 @@ function Footer() {
         {/* Subscribe part of the footer */}
         <div className="flex flex-col gap-2">
           <h2 className="h2 color">Subscribe</h2>
-          <p className="p1 ">Stay updated with the latest news and events</p>
+          <p className="text-gray-300 ">Stay updated with the latest news and events</p>
           <input
             type="text"
             placeholder="Your email address"
@@ -93,7 +93,7 @@ function Footer() {
         </div>
       </div>
       {/* copyright tag */}
-      <p className="p1 flex justify-center p-4">  © 2025 CrowdFund Connect. All rights Reserved. </p>
+      <p className="text-gray-300 flex justify-center p-4">  © 2025 CrowdFund Connect. All rights Reserved. </p>
     </section>
   );
 }

@@ -1,0 +1,57 @@
+{
+  "title": "Terms of Service",
+  "version": "1.0",
+  "lastUpdated": "2025-05-12",
+  "sections": [
+    {
+      "id": "acceptance",
+      "title": "Acceptance of Terms",
+      "content": "By accessing or using CrowdFund Connect, you agree to be bound by these Terms of Service and our Privacy Policy."
+    },
+    {
+      "id": "user_accounts",
+      "title": "User Accounts",
+      "content": "You must register for an account to use certain features. You are responsible for maintaining the confidentiality of your account credentials."
+    },
+    {
+      "id": "user_obligations",
+      "title": "User Obligations",
+      "content": "You agree not to use the platform for unlawful purposes, to upload harmful content, or to infringe on the rights of others."
+    },
+    {
+      "id": "intellectual_property",
+      "title": "Intellectual Property",
+      "content": "All content on the platform is owned by us or our licensors and is protected by applicable intellectual property laws."
+    },
+    {
+      "id": "termination",
+      "title": "Termination",
+      "content": "We may suspend or terminate your account at our discretion if you violate these Terms or engage in harmful conduct."
+    },
+    {
+      "id": "disclaimer_of_warranties",
+      "title": "Disclaimer of Warranties",
+      "content": "The platform is provided \"as is\" without warranties of any kind, either express or implied."
+    },
+    {
+      "id": "limitation_of_liability",
+      "title": "Limitation of Liability",
+      "content": "To the maximum extent permitted by law, we are not liable for any indirect, incidental, special, or consequential damages arising from your use of the service."
+    },
+    {
+      "id": "governing_law",
+      "title": "Governing Law",
+      "content": "These Terms are governed by the laws of the jurisdiction in which CrowdFund Connect is incorporated, without regard to conflict of law principles."
+    },
+    {
+      "id": "changes_to_terms",
+      "title": "Changes to Terms",
+      "content": "We may revise these Terms at any time by posting the updated version with a new \"lastUpdated\" date. Continued use constitutes acceptance."
+    },
+    {
+      "id": "contact",
+      "title": "Contact Information",
+      "content": "For questions about these Terms, please email us at support@crowdfundconnect.com."
+    }
+  ]
+}
