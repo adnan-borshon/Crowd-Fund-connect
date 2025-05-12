@@ -1,156 +1,187 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
-import user from "/Icons/user.png";
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import user_logo from "/Icons/user.png";
 import hamburger from "/Icons/hamburger.png";
 import coin from "/Icons/coins.png";
 import hover_coin from "/Icons/hover_coins.png";
+import { useCoin } from "../Context/CoinContext";
+import hover_user_logo from "/Icons/hover_user.png";
 function Navbar() {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
-   const [userMenuOpen, setUserMenuOpen] = useState(false);
- const userMenuRef = useRef(null);
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const userMenuRef = useRef(null);
+  const hamburgerRef = useRef(null);
+  const { user, addCoins, removeCoins } = useCoin();
 
-  const HamburgerOpen = () => {
-    setHamburgerOpen(true);
-  };
   const HamburgerClose = () => {
     setHamburgerOpen(false);
     setUserMenuOpen(false);
   };
+
+  // For handeling the click outside of the user menu and hamburger menu
   useEffect(() => {
     function handleClickOutside(event) {
       if (userMenuRef.current && !userMenuRef.current.contains(event.target)) {
         setUserMenuOpen(false);
-    setHamburgerOpen(false);
+      }
+      if (
+        hamburgerRef.current &&
+        !hamburgerRef.current.contains(event.target)
+      ) {
+        setHamburgerOpen(false);
       }
     }
-    
-    document.addEventListener('pointerdown', handleClickOutside);
-    
-    return () => document.removeEventListener('pointerdown', handleClickOutside);
+
+    document.addEventListener("pointerdown", handleClickOutside);
+
+    return () =>
+      document.removeEventListener("pointerdown", handleClickOutside);
   }, []);
   return (
-
     <>
-    <section className='navbar  fixed w-full top-0 z-50 shadow-lg'>
+      <section className="navbar  fixed w-full top-0 z-50 shadow-lg">
         <div className="container flex justify-between lg:grid grid-cols-3 gap-2 p-3 bg-white ">
+          {/* Navigation part */}
+          <div className="logo flex justify-start lg:ml-10 items-center">
+            <Link to="/" className="hidden lg:block h2 color">
+              CrowdFund Connect
+            </Link>
 
-            {/* Navigation part */}
-            <div className='logo flex justify-start lg:ml-10 items-center'>
-                        <Link to="/" className='hidden lg:block h2 color'>CrowdFund Connect</Link>
+            {/* For mobile view */}
+            <Link to="/" className=" lg:hidden h3 color">
+              CrowdFund Connect
+            </Link>
+          </div>
+          {/* Navigation links */}
+          <div className="Navigation hidden lg:flex justify-evenly items-center">
+            <Link to="/" className="h3 hover-effect-normal shrink">
+              Home
+            </Link>
+            <Link to="/about" className="h3 hover-effect-normal shrink">
+              About
+            </Link>
+            <Link to="/news" className="h3 hover-effect-normal shrink">
+              News
+            </Link>
+            <Link to="/contact" className="h3 hover-effect-normal shrink">
+              Contact
+            </Link>
+          </div>
 
-                 {/* For mobile view */}
-                 <Link to="/" className=' lg:hidden h3 color'>CrowdFund Connect</Link>
+          {/* User profile with dropdown feature and hamburger for mobile view */}
+          <div className="user-profile flex justify-end items-center">
+            {/* user dropdown menu  */}
+            <div className="relative" ref={userMenuRef}>
+              {/* avatar toggle */}
+             
+
+              <img
+                src={user_logo}
+                alt="User"
+                className="user-image mr-2 lg:mr-15 "
+                   onClick={() => {
+                  setUserMenuOpen((open) => !open);
+                  if (hamburgerOpen) {
+                    setHamburgerOpen(false);
+                  }
+                }}
+                />
+             
+                
+              {/* dropdown menu */}
+              {userMenuOpen && (
+                <div className="absolute p-2 right-0 lg:right-15 flex flex-col justify-center  mt-2 w-50 bg-white border border-gray-400 rounded shadow-lg z-20">
+                  <div className="px-4 py-2  ">
+                    <p className=" font-semibold">Guest User</p>
+                  </div>
+
+                  <div className="px-4 py-3 flex items-center justify-start">
+                    <img src={coin} className="h-5 w-5 mr-2 mt-1 " />
+                    <p className="text-gray-800">{user.coins} Coins</p>
+                  </div>
+
+                  <Link
+                    className="group button text-center flex justify-center  !bg-white !text-[#348cff] hover:!bg-[#348cff] hover:!text-white !border !border-gray-400 "
+                    to="/addCoins"
+                    onClick={() => {
+                      setUserMenuOpen(false);
+                    }}
+                  >
+                    <img
+                      src={coin}
+                      className="absolute left-12 h-5 w-5 mr-2 mt-1 transform transition-opacity duration-200 ease-in group-hover:opacity-0"
+                    />
+                    <img
+                      src={hover_coin}
+                      alt="hover"
+                      className="h-5 w-5 mr-2 mt-1 "
+                    />
+                    Add Coins
+                  </Link>
+                </div>
+              )}
             </div>
-            {/* Navigation links */}  
-            <div className='Navigation hidden lg:flex justify-evenly items-center'>
-                 <Link to="/" className='h3 hover-effect-normal shrink'>Home</Link>
-                 <Link to="/about" className='h3 hover-effect-normal shrink'>About</Link>
-                 <Link to="/news" className='h3 hover-effect-normal shrink'>News</Link>
-                 <Link to="/contact" className='h3 hover-effect-normal shrink'>Contact</Link>
-
+            {/* Hidden hamburger menu for mobile view */}
+            <div className="hamburger hover-effect-normal lg:hidden cursor-pointer flex-1 flex justify-end ">
+              <img
+                src={hamburger}
+                onClick={() => {
+                  if (userMenuOpen) {
+                    setUserMenuOpen(false);
+                  }
+                  setHamburgerOpen((prev) => !prev);
+                }}
+                className={`w-10 h-7 mr-2 cursor-pointer transform transition-transform duration-600 ${
+                  hamburgerOpen ? "rotate-x-180" : "rotate-0"
+                }`}
+              />
             </div>
-
-            {/* User profile with dropdown feature and hamburger for mobile view */}
-            <div className='user-profile flex justify-end items-center'>
- {/* user dropdown menu  */}
-<div className="relative" ref={userMenuRef}>
-  {/* avatar toggle */}
-  <img
-    src={user}
-    alt="User"
-    className="user-image mr-2 lg:mr-15 cursor-pointer"
-    onClick={() => setUserMenuOpen((open) => !open)}
-  />
-  {/* dropdown menu */}
-  {userMenuOpen && (
-    <div className="absolute p-2 right-0 lg:right-15 flex flex-col justify-center  mt-2 w-50 bg-white border border-gray-400 rounded shadow-lg z-20">
-      <div className="px-4 py-2  ">
-        <p className=" font-semibold">Guest User</p>
-      </div>
-
-      <div className="px-4 py-3 flex items-center justify-start"> 
-             <img src={coin} className='h-5 w-5 mr-2 mt-1 '/>
-        <p className="text-gray-800">120</p>
-      </div>
-
-      <Link
-        className="group button text-center flex justify-center  !bg-white !text-[#348cff] hover:!bg-[#348cff] hover:!text-white !border !border-gray-400 "
-        to="/addCoins"
-      >
-        <img src={coin}  className='absolute left-12 h-5 w-5 mr-2 mt-1 transform transition-opacity duration-200 ease-in group-hover:opacity-0'/>
-        <img src={hover_coin} alt='hover'  className='h-5 w-5 mr-2 mt-1 '/>
-        Add Coins
-      </Link>
-    </div>
-  )}
-</div>
-
-         <div
-          className="hamburger hover-effect-normal lg:hidden cursor-pointer flex-1 flex justify-end "
-        >
-
-          <img src={hamburger} onClick={() => 
-        {
-          if (userMenuOpen) {
-            setUserMenuOpen(false);
-          }
-          setHamburgerOpen((prev) => !prev)
-        } 
-          
-        
-        } 
-           className={`w-10 h-7 mr-2 cursor-pointer transform transition-transform duration-600 ${
-        hamburgerOpen ? 'rotate-x-180' : 'rotate-0'
-      }`} />
-        </div>
-            </div>
+          </div>
         </div>
 
-         {/* Hamburger menu items which will only show on smaller devices*/}
-      {hamburgerOpen && (
-        
-        <div className="Navigation flex flex-col  bg-gray-100  w-full ">
-         
-          <Link
-            to="/"
-            onClick={HamburgerClose}
-            className="h3 hover-effect-normal nav-items-mobile"
+        {/* Hamburger menu items which will only show on smaller devices*/}
+        {hamburgerOpen && (
+          <div
+            ref={hamburgerRef}
+            className="Navigation flex flex-col  bg-gray-100  w-full "
           >
-            Home
-          </Link>
-             <Link
-            to="/about"
-            onClick={HamburgerClose}
-            className="h3 hover-effect-normal nav-items-mobile"
-          >
-            About
-          </Link>
-          <Link
-            to="/news"
-            onClick={HamburgerClose}
-            className="h3 hover-effect-normal nav-items-mobile"
-          >
-            News
-          </Link>
-         <Link
-            to="/contact"
-            onClick={HamburgerClose}
-            className="h3 hover-effect-normal nav-items-mobile"
-          >
-            Contact
-          </Link>
-   
-       
-        </div>
-      )}
-    </section>
+            <Link
+              to="/"
+              onClick={HamburgerClose}
+              className="h3 hover-effect-normal nav-items-mobile"
+            >
+              Home
+            </Link>
+            <Link
+              to="/about"
+              onClick={HamburgerClose}
+              className="h3 hover-effect-normal nav-items-mobile"
+            >
+              About
+            </Link>
+            <Link
+              to="/news"
+              onClick={HamburgerClose}
+              className="h3 hover-effect-normal nav-items-mobile"
+            >
+              News
+            </Link>
+            <Link
+              to="/contact"
+              onClick={HamburgerClose}
+              className="h3 hover-effect-normal nav-items-mobile"
+            >
+              Contact
+            </Link>
+          </div>
+        )}
+      </section>
 
       {/* Fake navbar for the problem facing for fixed navbar */}
-    <section className="FakeNavbar">
-      <div className=" w-100% bg-white p-7 "></div>
-    </section>
+      <section className="FakeNavbar">
+        <div className=" w-100% bg-white p-7 "></div>
+      </section>
     </>
-    
   );
 }
 

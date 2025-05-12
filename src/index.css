@@ -4,7 +4,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 .inputs{
-    @apply border-gray-300 border-2 rounded p-1;
+    @apply border-gray-300 border-2 rounded p-2;
     @apply placeholder:text-gray-500  focus:placeholder:text-gray-400 focus:text-white
 }
 .h1{

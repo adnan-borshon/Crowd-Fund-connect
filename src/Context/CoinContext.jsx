@@ -1,4 +1,4 @@
-// src/context/CoinContext.jsx
+
 import React, {
   createContext,
   useState,
@@ -38,9 +38,11 @@ export function CoinProvider({ children }) {
     }
   }, [user]);
 
+
+  
   const addCoins = (amount) => {
     
-    setUser((u) => ({ ...u, coins: u.coins + (+amount) }));
+    setUser((u)=> ({ ...u,coins: u.coins + (+amount) }));
   };
 
   const removeCoins = (amount) => {

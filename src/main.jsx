@@ -1,7 +1,4 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import React from "react";
 import ReactDOM from "react-dom/client";
@@ -12,66 +9,55 @@ import Campaigns from "./Components/Campaigns.jsx";
 import About from "./Components/About.jsx";
 import Contact from "./Components/Contact.jsx";
 import News from "./Components/News.jsx";
-import { NewsProvider } from "./Context/NewsContext.jsx"; 
+import { NewsProvider } from "./Context/NewsContext.jsx";
 import PrivacyPolicy from "./Components/PrivacyPolicy.jsx";
 import Terms from "./Components/Terms.jsx";
 import AddCoins from "./Components/AddCoins.jsx";
 import { CoinProvider } from "./Context/CoinContext.jsx";
 
-
-
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout/>,
-    children:[
+    element: <MainLayout />,
+    children: [
       {
         path: "/",
-        element: <Home/>
-       },
-          {
+        element: <Home />,
+      },
+      {
         path: "/about",
-        element: <About/>
-       },
-          {
+        element: <About />,
+      },
+      {
         path: "/contact",
-        element: <Contact/>
-       },
-          {
+        element: <Contact />,
+      },
+      {
         path: "/news",
-        element: <News/>
-       },
-             {
+        element: <News />,
+      },
+      {
         path: "/privacy-policy",
-        element: <PrivacyPolicy/>
-       },
-             {
+        element: <PrivacyPolicy />,
+      },
+      {
         path: "/terms",
-        element: <Terms/>
-       },
-                    {
+        element: <Terms />,
+      },
+      {
         path: "/addCoins",
-        element: <AddCoins/>
-       },
-    ]
+        element: <AddCoins />,
+      },
+    ],
   },
 ]);
 
 const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
-
-  
   <CoinProvider>
-<NewsProvider>
-<RouterProvider router={router} />
-
- 
-</NewsProvider>
+    <NewsProvider>
+      <RouterProvider router={router} />
+    </NewsProvider>
   </CoinProvider>
-
-
-
-
-  
 );
