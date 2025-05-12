@@ -4,6 +4,7 @@ import search from "/Icons/search.png";
 import donate from "/Icons/donate.png";
 import { Link } from 'react-router-dom';
 import Contact from './Contact';
+import Campaigns from './Campaigns';
 function Home() {
   return (
  <>
@@ -56,7 +57,9 @@ function Home() {
   </div>
 
  </section>
-
+<section>
+  <Campaigns/>
+</section>
  <section>
   <Contact/>
  </section>

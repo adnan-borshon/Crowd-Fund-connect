@@ -15,6 +15,8 @@ import News from "./Components/News.jsx";
 import { NewsProvider } from "./Context/NewsContext.jsx"; 
 import PrivacyPolicy from "./Components/PrivacyPolicy.jsx";
 import Terms from "./Components/Terms.jsx";
+import AddCoins from "./Components/AddCoins.jsx";
+import { CoinProvider } from "./Context/CoinContext.jsx";
 
 
 
@@ -47,6 +49,10 @@ const router = createBrowserRouter([
         path: "/terms",
         element: <Terms/>
        },
+                    {
+        path: "/addCoins",
+        element: <AddCoins/>
+       },
     ]
   },
 ]);
@@ -55,12 +61,14 @@ const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
 
-
-<NewsProvider>
   
+  <CoinProvider>
+<NewsProvider>
 <RouterProvider router={router} />
+
  
 </NewsProvider>
+  </CoinProvider>
 
 
 
