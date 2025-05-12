@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import React from "react";
 import ReactDOM from "react-dom/client";
 import MainLayout from "./MainLayout.jsx";
 import "./index.css";
@@ -14,7 +13,10 @@ import PrivacyPolicy from "./Components/PrivacyPolicy.jsx";
 import Terms from "./Components/Terms.jsx";
 import AddCoins from "./Components/AddCoins.jsx";
 import { CoinProvider } from "./Context/CoinContext.jsx";
+import Donate from "./Components/Donate.jsx";
 
+
+import { CampaignProvider} from "./Context/CampaignContext.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -48,6 +50,10 @@ const router = createBrowserRouter([
         path: "/addCoins",
         element: <AddCoins />,
       },
+        {
+        path: "/donate",
+        element: <Donate />,
+      },
     ],
   },
 ]);
@@ -57,7 +63,10 @@ const root = document.getElementById("root");
 ReactDOM.createRoot(root).render(
   <CoinProvider>
     <NewsProvider>
+      <CampaignProvider>
+
       <RouterProvider router={router} />
+      </CampaignProvider>
     </NewsProvider>
   </CoinProvider>
 );
