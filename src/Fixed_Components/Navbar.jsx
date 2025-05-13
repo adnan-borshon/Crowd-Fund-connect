@@ -5,7 +5,7 @@ import hamburger from "/Icons/hamburger.png";
 import coin from "/Icons/coins.png";
 import hover_coin from "/Icons/hover_coins.png";
 import { useCoin } from "../Context/CoinContext";
-import hover_user_logo from "/Icons/hover_user.png";
+import crowdFund_logo from "/crowdFund_logo.png"
 function Navbar() {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
@@ -43,6 +43,8 @@ function Navbar() {
         <div className="container flex justify-between lg:grid grid-cols-3 gap-2 p-3 bg-white ">
           {/* Navigation part */}
           <div className="logo flex justify-start lg:ml-10 items-center">
+            <img src={crowdFund_logo} className="h-10 w-10 object-cover mr-2"/>
+            
             <Link to="/" className="hidden lg:block h2 color">
               CrowdFund Connect
             </Link>

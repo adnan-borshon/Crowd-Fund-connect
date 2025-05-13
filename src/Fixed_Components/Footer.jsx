@@ -91,7 +91,7 @@ function Footer() {
             Stay updated with the latest news and events
           </p>
           <input
-            type="text"
+            type="email"
             placeholder="Your email address"
             className="inputs"
           />
@@ -100,8 +100,8 @@ function Footer() {
       </div>
       {/* copyright tag */}
       <p className="text-gray-300 flex justify-center p-4">
-        {" "}
-        © 2025 CrowdFund Connect. All rights Reserved.{" "}
+      
+        © 2025 CrowdFund Connect. All rights Reserved.
       </p>
     </section>
   );

@@ -51,7 +51,7 @@ const router = createBrowserRouter([
         element: <AddCoins />,
       },
         {
-        path: "/donate",
+        path: "/donate/:id",
         element: <Donate />,
       },
     ],

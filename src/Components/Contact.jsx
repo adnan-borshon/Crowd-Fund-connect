@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const navigate = useNavigate(); // Initialize navigate for routing
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Navigate to the contact page and pass the values as query parameters
+    navigate(`/contact?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&message=${encodeURIComponent(message)}`);
+  };
   return (
     <>
       {/* <!-- Heading --> */}
@@ -12,7 +25,9 @@ function Contact() {
         </p>
       </div>
 
-      <section id="contact" class="max-w-3xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+      <section 
+      onSubmit={handleSubmit}
+      id="contact" class="max-w-3xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         {/* <!-- Form --> */}
         <form class="space-y-6">
           {/* <!-- Name field --> */}
