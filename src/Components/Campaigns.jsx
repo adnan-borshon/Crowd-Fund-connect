@@ -33,7 +33,7 @@ useEffect(() => {
         <p className="p1">Discover causes that need your support</p>
       </div>
 
-      <div className="container-campaign w-full ">
+      <div className="container w-full ">
 
         {/* filter tabs */}
         <div className="filterTabs  py-1  ">
@@ -54,7 +54,7 @@ useEffect(() => {
                 <span
                   className={`filter-tabs ${
                     selectedPlan === "Ongoing"
-                      ? " border-b-2 border-[#348cff]"
+                      ? " border-b-2 border-[#348cff] text-[#348cff]"
                       : ""
                   }`}
                 >
@@ -77,7 +77,7 @@ useEffect(() => {
                 <span
                   className={`filter-tabs ${
                     selectedPlan === "Recent"
-                      ? " border-b-2 border-[#348cff]"
+                      ? " border-b-2 border-[#348cff] text-[#348cff]"
                       : ""
                   }`}
                 >
@@ -99,7 +99,7 @@ useEffect(() => {
                 />
                 <span
                   className={`filter-tabs ${
-                    selectedPlan === "Ended" ? " border-b-2 border-[#348cff]" : ""
+                    selectedPlan === "Ended" ? "text-[#348cff] border-b-2 border-[#348cff]" : ""
                   }`}
                 >
                   Ended

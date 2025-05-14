@@ -18,6 +18,7 @@ function Navbar() {
     setUserMenuOpen(false);
   };
 
+
   // For handeling the click outside of the user menu and hamburger menu
   useEffect(() => {
     function handleClickOutside(event) {
@@ -25,7 +26,7 @@ function Navbar() {
         setUserMenuOpen(false);
       }
       if (
-        hamburgerRef.current &&
+        hamburgerRef.current(event.target) &&
         !hamburgerRef.current.contains(event.target)
       ) {
         setHamburgerOpen(false);
@@ -40,7 +41,7 @@ function Navbar() {
   return (
     <>
       <section className="navbar  fixed w-full top-0 z-50 shadow-lg">
-        <div className="container flex justify-between lg:grid grid-cols-3 gap-2 p-3 bg-white ">
+        <div className="container  flex justify-between lg:grid grid-cols-3 gap-2 p-3 bg-white ">
           {/* Navigation part */}
           <div className="logo flex justify-start lg:ml-10 items-center">
             <img src={crowdFund_logo} className="h-10 w-10 object-cover mr-2"/>
@@ -75,12 +76,11 @@ function Navbar() {
             {/* user dropdown menu  */}
             <div className="relative" ref={userMenuRef}>
               {/* avatar toggle */}
-             
-
+            
               <img
                 src={user_logo}
                 alt="User"
-                className="user-image mr-2 lg:mr-15 "
+                className={`user-image mr-2 lg:mr-15 ${userMenuOpen ? 'bg-[#348cff]' : ''}`}
                    onClick={() => {
                   setUserMenuOpen((open) => !open);
                   if (hamburgerOpen) {
@@ -124,19 +124,27 @@ function Navbar() {
               )}
             </div>
             {/* Hidden hamburger menu for mobile view */}
-            <div className="hamburger hover-effect-normal lg:hidden cursor-pointer flex-1 flex justify-end ">
-              <img
-                src={hamburger}
-                onClick={() => {
-                  if (userMenuOpen) {
-                    setUserMenuOpen(false);
-                  }
-                  setHamburgerOpen((prev) => !prev);
-                }}
-                className={`w-10 h-7 mr-2 cursor-pointer transform transition-transform duration-600 ${
-                  hamburgerOpen ? "rotate-x-180" : "rotate-0"
-                }`}
-              />
+    
+
+
+            <div 
+            ref={hamburgerRef}
+                   onClick={()=>{
+                if(userMenuOpen){
+                setUserMenuOpen(false);
+              }
+           setHamburgerOpen((prev)=>!prev);
+            }
+          }
+            className="lg:hidden md:hidden">
+              <div className={`hamburger transition-transform ${hamburgerOpen ? '  rotate-[-45deg] translate-y-[12px]': ''}`}
+      
+              ></div>
+              <div className={`hamburger transform-content !duration-200 ${hamburgerOpen ? ' opacity-0': 'opacity-100'}`}
+       
+              ></div>
+              <div className={`hamburger transition-transform ${hamburgerOpen ? '  rotate-45 translate-y-[-12px]': ''}`}
+              ></div>
             </div>
           </div>
         </div>

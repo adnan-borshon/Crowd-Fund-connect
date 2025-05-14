@@ -8,10 +8,10 @@ import Campaigns from "./Campaigns";
 function Home() {
   return (
     <>
-      <section className="hero overflow-hidden">
-        <div className="container ">
+      <section className="hero overflow-hidden mx-auto">
+        <div className="container w-full ">
           {/* Hero section */}
-          <div className="hero py-15 bg-color flex flex-col justify-center items-center text-center shrink">
+          <div className="hero py-15 bg-color lg:w-full flex flex-col justify-center items-center text-center shrink">
             <h1 className="text-6xl lg:text-7xl  lg:w-[58%] font-bold text-white">
               Make a Difference Support What Matters
             </h1>
@@ -21,7 +21,7 @@ function Home() {
             </h3>
           </div>
           {/* How the website works section*/}
-          <div className="2ndSection shrink bg-white grid grid-rows-3 lg:grid-rows-2 lg:mt-10 mb-10">
+          <div className="2ndSection  bg-white grid grid-rows-3 lg:grid-rows-2 lg:mt-10 mb-10">
             <div className="upperPart row-span-1 gap-2 flex flex-col justify-center items-center text-center">
               <h3 className="text-[#348cff] font-semibold text-lg">
                 HOW IT WORKS
@@ -67,7 +67,7 @@ function Home() {
           </div>
         </div>
       </section>
-      <section>
+      <section className="">
         <Campaigns />
       </section>
       <section>

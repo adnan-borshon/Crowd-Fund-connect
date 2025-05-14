@@ -29,11 +29,11 @@ const {campaigns, loading}= useCampaigns();
 {
    <div
               key={selectedCampaign.id}
-              className="card  flex flex-col shrink bg-white shadow-xl rounded-lg"
+              className="card  flex flex-col shrink bg-white shadow-2xl rounded-lg"
             >
               <img
                 src={selectedCampaign.image}
-                className="h-56 w-full object-cover rounded-tl-lg  rounded-tr-lg mb-3 hover-effect-normal !cursor-default"
+                className="h-56 w-full object-fill rounded-tl-lg  rounded-tr-lg mb-3 !cursor-default transition-transform duration-700 hover:scale-y-100 hover:object-cover"
               />
               <div className="grid grid-rows-2 px-6 py- flex-grow">
                 <h1 className="text-2xl font-bold text-start">
@@ -81,7 +81,7 @@ const {campaigns, loading}= useCampaigns();
 {/* donate to the campaign part */}
 <div className='donate-now '>
 
-     <div className="container shrink-0 py-10 px-7  shadow-lg  space-y-4 border border-gray-300 rounded-lg bg-white">
+     <div className="container shrink-0 py-10 px-7  shadow-2xl  space-y-4 border border-gray-300 rounded-lg bg-white">
           <div className="upper-part flex flex-col items-center">
             <img src={coin} className="h-10 w-10 mb-4" />
             <h1 className="text-4xl font-bold mb-2">Make a Donation</h1>
