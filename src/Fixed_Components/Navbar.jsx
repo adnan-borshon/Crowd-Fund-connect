@@ -9,12 +9,14 @@ import crowdFund_logo from "/crowdFund_logo.png";
 import sun from "/Icons/sun.png";
 import moon from "/Icons/moon.png";
 import DarkMode from "../hooks/DarkMode";
+import white_user_logo from "/Icons/hover_user.png"
 
 function Navbar() {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const userMenuRef = useRef(null);
-  const hamburgerRef = useRef(null);
+  const hamburgerBtnRef = useRef(null);
+  const hamburgerMenuRef = useRef(null);
   const { user, addCoins, removeCoins } = useCoin();
   const [theme, toggleTheme] = DarkMode();
 
@@ -31,8 +33,10 @@ function Navbar() {
         setUserMenuOpen(false);
       }
       if (
-        hamburgerRef.current(event.target) &&
-        !hamburgerRef.current.contains(event.target)
+        hamburgerBtnRef.current &&
+  hamburgerMenuRef.current &&
+  !hamburgerBtnRef.current.contains(event.target) &&
+  !hamburgerMenuRef.current.contains(event.target)
       ) {
         setHamburgerOpen(false);
       }
@@ -46,7 +50,7 @@ function Navbar() {
   return (
     <>
       <section className="navbar  fixed w-full top-0 z-50 shadow-lg">
-        <div className="container  flex justify-between lg:grid grid-cols-3 gap-2 p-3 bg-white ">
+        <div className="container  flex justify-between lg:grid grid-cols-3 gap-2 p-3 bg-white dark:bg-gray-800 ">
           {/* Navigation part */}
           <div className="logo flex justify-start lg:ml-10 items-center">
             <img src={crowdFund_logo} className="h-10 w-10 object-cover mr-2"/>
@@ -76,9 +80,9 @@ function Navbar() {
             </Link>
           </div>
 
-          {/* User profile with dropdown feature and hamburger for mobile view */}
-          <div className="user-profile flex justify-end items-center">
-            {/* user dropdown menu  */}
+          {/* User profile with dropdown feature,dark mode and hamburger for mobile view */}
+          <div className="user-profile gap-2 flex justify-end items-center">
+            {/* dark mode */}
             <div 
             onClick={toggleTheme}
             className="darkMode relative cursor-pointer transform-view hover:scale-110">
@@ -95,14 +99,14 @@ function Navbar() {
               }
 
             </div>
-            
-            <div className="relative" ref={userMenuRef}>
+            {/* user dropdown menu  */}
+            <div className="group " ref={userMenuRef}>
               {/* avatar toggle */}
             
               <img
-                src={user_logo}
+                src={`${theme === "dark"? `${white_user_logo}`: `${user_logo}` }`}
                 alt="User"
-                className={`user-image mr-2 lg:mr-15 ${userMenuOpen ? 'bg-[#348cff]' : ''}`}
+                className={`user-image  lg:mr-15 ${userMenuOpen ? 'bg-[#348cff]' : ''}`}
                    onClick={() => {
                   setUserMenuOpen((open) => !open);
                   if (hamburgerOpen) {
@@ -114,29 +118,29 @@ function Navbar() {
                 
               {/* dropdown menu */}
               {userMenuOpen && (
-                <div className="absolute p-2 right-0 lg:right-15 flex flex-col justify-center  mt-2 w-50 bg-white border border-gray-400 rounded shadow-lg z-20">
+                <div className="absolute p-2 right-0 lg:right-15 flex flex-col justify-center  mt-2 w-50 bg-white border border-gray-400 dark:bg-gray-900 rounded shadow-lg z-20">
                   <div className="px-4 py-2  ">
                     <p className=" font-semibold">Guest User</p>
                   </div>
 
                   <div className="px-4 py-3 flex items-center justify-start">
                     <img src={coin} className="h-5 w-5 mr-2 mt-1 " />
-                    <p className="text-gray-800">{user.coins} Coins</p>
+                    <p className="text-gray-800 dark:text-white">{user.coins} Coins</p>
                   </div>
 
                   <Link
-                    className="group button text-center flex justify-center  !bg-white !text-[#348cff] hover:!bg-[#348cff] hover:!text-white !border !border-gray-400 "
+                    className="group button  text-center flex justify-center  !border !border-gray-400 "
                     to="/addCoins"
                     onClick={() => {
                       setUserMenuOpen(false);
                     }}
                   >
                     <img
-                      src={coin}
+                      src={hover_coin}
                       className="absolute left-12 h-5 w-5 mr-2 mt-1 transform transition-opacity duration-200 ease-in group-hover:opacity-0"
                     />
                     <img
-                      src={hover_coin}
+                      src={coin}
                       alt="hover"
                       className="h-5 w-5 mr-2 mt-1 "
                     />
@@ -148,15 +152,16 @@ function Navbar() {
             {/* Hidden hamburger menu for mobile view */}
   
             <div 
-            ref={hamburgerRef}
+            ref={hamburgerBtnRef}
                    onClick={()=>{
                 if(userMenuOpen){
                 setUserMenuOpen(false);
               }
+           
            setHamburgerOpen((prev)=>!prev);
             }
           }
-            className="lg:hidden md:hidden">
+            className="lg:hidden ">
               <div className={`hamburger transition-transform ${hamburgerOpen ? '  rotate-[-45deg] translate-y-[12px]': ''}`}
       
               ></div>
@@ -172,8 +177,8 @@ function Navbar() {
         {/* Hamburger menu items which will only show on smaller devices*/}
         {hamburgerOpen && (
           <div
-            ref={hamburgerRef}
-            className="Navigation flex flex-col  bg-gray-100  w-full "
+            ref={hamburgerMenuRef}
+            className="Navigation dark:bg-gray-800 flex flex-col  bg-gray-100  w-full "
           >
             <Link
               to="/"
@@ -208,8 +213,8 @@ function Navbar() {
       </section>
 
       {/* Fake navbar for the problem facing for fixed navbar */}
-      <section className="FakeNavbar">
-        <div className=" w-100% bg-white p-7 "></div>
+      <section className="FakeNavbar ">
+        <div className=" w-100% dark:bg-gray-900 bg-white p-7 "></div>
       </section>
     </>
   );

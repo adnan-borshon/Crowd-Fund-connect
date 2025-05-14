@@ -27,13 +27,13 @@ export default function PrivacyPolicy() {
   return (
     <div className="max-w-3xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-2">{privacyData.title}</h1>
-      <p className="text-sm text-gray-500 mb-6">
+      <p className="text-sm text-gray-400 mb-6 ">
         Last updated: {privacyData.lastUpdated}
       </p>
       {privacyData.sections.map((sec) => (
         <section key={sec.id} className="mb-4">
           <h2 className="text-xl font-semibold">{sec.title}</h2>
-          <p className="text-gray-700">{sec.content}</p>
+          <p className="text-gray-700 dark:text-[#348cff]">{sec.content}</p>
         </section>
       ))}
     </div>

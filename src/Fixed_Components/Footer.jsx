@@ -6,9 +6,9 @@ import Instagram from "/Icons/instagram-logo.png";
 import LinkedIn from "/Icons/linkedin.png";
 function Footer() {
   return (
-    <section className="overflow-hidden bg-[#1f2937] mt-10">
+    <section className="overflow-hidden bg-gray-900 mt-10 dark:bg-[#0e2442] border-b-2 border-gray-600 dark:border-gray-500">
       {/* whole footer container */}
-      <div className="container shrink grid lg:grid-cols-4 gap-3 p-4 border-t-2 border-b-2 border-gray-600">
+      <div className="container dark:!bg-[#0e2442] shrink grid lg:grid-cols-4 gap-3 p-4 border-t-2 ">
         {/* About Crowd Fund part of the footer */}
         <div className="flex flex-col gap-2">
           <h2 className="h2 color">About CrowdFund Connect</h2>

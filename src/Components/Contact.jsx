@@ -12,27 +12,35 @@ function Contact() {
     e.preventDefault();
 
     // Navigate to the contact page and pass the values as query parameters
-    navigate(`/contact?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&message=${encodeURIComponent(message)}`);
+    navigate(
+      `/contact?name=${encodeURIComponent(name)}&email=${encodeURIComponent(
+        email
+      )}&message=${encodeURIComponent(message)}`
+    );
   };
   return (
     <>
       {/* <!-- Heading --> */}
-      <div className="contact-header w-full flex flex-col justify-center items-center text-center mt-10">
-        <h1 class="text-3xl font-extrabold text-gray-900 mb-4">Contact Us</h1>
+      <div className="contact-header  w-full flex flex-col justify-center items-center text-center mt-10">
+        <h1 class="text-3xl font-extrabold dark:!text-[#348cff] text-gray-900 mb-4">
+          Contact Us
+        </h1>
         <p class="p1  mx-5 lg:w-[40%]">
           Have questions, suggestions, or need assistance? Fill out the form
           below and our team will get back to you shortly.
         </p>
       </div>
 
-      <section 
-      onSubmit={handleSubmit}
-      id="contact" class="max-w-3xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+      <section
+        onSubmit={handleSubmit}
+        id="contact"
+        class="max-w-3xl mx-auto py-6 px-4 sm:px-6 lg:px-8"
+      >
         {/* <!-- Form --> */}
-        <form class="space-y-6">
+        <form class="space-y-6 ">
           {/* <!-- Name field --> */}
           <div>
-            <label for="name" class="block  text-black">
+            <label for="name" class="block text-black">
               Name
             </label>
             <input

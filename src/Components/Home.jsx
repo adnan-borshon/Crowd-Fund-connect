@@ -21,7 +21,7 @@ function Home() {
             </h3>
           </div>
           {/* How the website works section*/}
-          <div className="2ndSection  bg-white grid grid-rows-3 lg:grid-rows-2 lg:mt-10 mb-10">
+          <div className="_2ndSection  bg-white grid grid-rows-3 lg:grid-rows-2 lg:mt-10 mb-10">
             <div className="upperPart row-span-1 gap-2 flex flex-col justify-center items-center text-center">
               <h3 className="text-[#348cff] font-semibold text-lg">
                 HOW IT WORKS

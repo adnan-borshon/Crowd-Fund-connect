@@ -4,9 +4,9 @@ function About() {
   return (
     <section className="overflow-hidden flex flex-col items-center justify-center  mx-5">
       <h1 className="my-10 text-4xl font-extrabold color">
-        About CrowdFund Connect
+        About CrowdFund 
       </h1>
-      <div className="container grid grid-rows-4 gap-10 lg:w-[60%] mx-auto lg:mt-5">
+      <div className="about grid grid-rows-4 gap-10 lg:w-[60%] mx-auto lg:mt-5">
         <div className="about-sections">
           <h1 className="text-3xl font-bold">Our Mission</h1>
           <p className="p1 text-lg">

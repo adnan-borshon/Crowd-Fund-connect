@@ -1,9 +1,51 @@
 @import "tailwindcss";
-
+@custom-variant dark (&:where(.dark, .dark *));
 .dark body{
-  @apply bg-gray-800 text-white;
+  @apply bg-gray-900;
+}
+.dark .nav-items-mobile{
+  @apply text-white;
+}
+.dark h1{
+  @apply text-[#348cff];
+}
+.dark h2{
+  @apply text-[#348cff];
+}
+.dark p{
+  @apply text-white;
+}
+.dark .container{
+  @apply bg-gray-900 text-white;
+}
+.dark .card{
+  @apply bg-gray-950;
+}
+.dark ._2ndSection{
+@apply bg-gray-900 text-[#348cff];
+}
+.dark ._2nd-section-lower-part div h2{
+  @apply !text-[#348cff];
+}
+.dark ._2nd-section-lower-part div p{
+  @apply !text-white;
 }
 
+
+.dark .bg-color{
+  @apply bg-[#0e2442];
+}
+
+.dark label{
+  @apply text-white;
+}
+
+.dark #contact input{
+  @apply bg-gray-800 placeholder-gray-400 focus:text-white text-white;
+}
+.dark #contact textarea{
+  @apply bg-gray-800 placeholder-gray-400 focus:text-white text-white;
+}
 
 body {
  
@@ -36,7 +78,9 @@ body {
     @apply   bg-[#348cff] text-white font-semibold py-2 px-4 rounded cursor-pointer;
     @apply hover:bg-white hover:text-[#348cff] hover:border hover:border-[#348cff] transition-all duration-300 ease-in-out;
 }
-
+.dark .button{
+  @apply hover:!bg-[#0e2442] hover:text-white;
+}
 
 .p1{
     @apply  text-gray-600;
@@ -84,6 +128,10 @@ body {
 .filter-tabs{
   @apply font-medium px-3 py-2;
   @apply hover:border-b-2 hover:border-gray-600;
+}
+
+.dark .filter-tabs{
+  @apply  hover:border-white
 }
 
 .container{

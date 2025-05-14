@@ -27,13 +27,13 @@ useEffect(() => {
   }
 
   return (
-    <section className="text-center p-10 lg:px-20 lg:py-10 bg-gray-100 overflow-hidden">
+    <section className="text-center p-10 lg:px-20 lg:py-10 bg-gray-100 dark:bg-gray-900 overflow-hidden">
       <div>
         <h1 className="h1 mb-2">Funding Campaigns</h1>
         <p className="p1">Discover causes that need your support</p>
       </div>
 
-      <div className="container w-full ">
+      <div className="container w-full mt-10 lg:mt-6">
 
         {/* filter tabs */}
         <div className="filterTabs  py-1  ">
@@ -55,7 +55,7 @@ useEffect(() => {
                   className={`filter-tabs ${
                     selectedPlan === "Ongoing"
                       ? " border-b-2 border-[#348cff] text-[#348cff]"
-                      : ""
+                      : "dark:text-white"
                   }`}
                 >
                   Ongoing
@@ -78,7 +78,7 @@ useEffect(() => {
                   className={`filter-tabs ${
                     selectedPlan === "Recent"
                       ? " border-b-2 border-[#348cff] text-[#348cff]"
-                      : ""
+                      : "dark:text-white"
                   }`}
                 >
                   Recent
@@ -99,7 +99,7 @@ useEffect(() => {
                 />
                 <span
                   className={`filter-tabs ${
-                    selectedPlan === "Ended" ? "text-[#348cff] border-b-2 border-[#348cff]" : ""
+                    selectedPlan === "Ended" ? "text-[#348cff] border-b-2 border-[#348cff]" : "dark:text-white"
                   }`}
                 >
                   Ended

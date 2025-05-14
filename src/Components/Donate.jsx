@@ -55,9 +55,9 @@ const {campaigns, loading}= useCampaigns();
                   </h3>
                 </div>
                 {/* the progress bar */}
-                <div className="bar bg-gray-300 rounded">
+                <div className="bar bg-gray-300 dark:bg-gray-600 rounded">
                   <div
-                    className="h-full rounded bg-blue-500 "
+                    className="h-full rounded dark:bg-white bg-blue-500 "
                     style={{
                       width: `${parseFloat(
                         ((selectedCampaign.raised * 100) / selectedCampaign.goal).toFixed(2)
@@ -66,7 +66,7 @@ const {campaigns, loading}= useCampaigns();
                   ></div>
                 </div>
                 <div className="flex justify-between">
-                  <h3 className="p1">Raised</h3>
+                  <h3 className="p1 dark:!text-white">Raised</h3>
                   <h3 className="font-semibold">
                     {selectedCampaign.raised}/{selectedCampaign.goal} coins
                   </h3>
