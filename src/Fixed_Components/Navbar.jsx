@@ -5,13 +5,18 @@ import hamburger from "/Icons/hamburger.png";
 import coin from "/Icons/coins.png";
 import hover_coin from "/Icons/hover_coins.png";
 import { useCoin } from "../Context/CoinContext";
-import crowdFund_logo from "/crowdFund_logo.png"
+import crowdFund_logo from "/crowdFund_logo.png";
+import sun from "/Icons/sun.png";
+import moon from "/Icons/moon.png";
+import DarkMode from "../hooks/DarkMode";
+
 function Navbar() {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const userMenuRef = useRef(null);
   const hamburgerRef = useRef(null);
   const { user, addCoins, removeCoins } = useCoin();
+  const [theme, toggleTheme] = DarkMode();
 
   const HamburgerClose = () => {
     setHamburgerOpen(false);
@@ -74,6 +79,23 @@ function Navbar() {
           {/* User profile with dropdown feature and hamburger for mobile view */}
           <div className="user-profile flex justify-end items-center">
             {/* user dropdown menu  */}
+            <div 
+            onClick={toggleTheme}
+            className="darkMode relative cursor-pointer transform-view hover:scale-110">
+
+              {
+                theme=== "dark"? (
+        <img src={sun} className="h-7 w-7  bg-gray-800 object-cover shadow-2xl p-1 rounded-full"/>
+
+                ): (
+              <img src={moon} className="h-7 w-7  bg-gray-100 shadow-2xl object-cover p-1 rounded-full"/>
+
+                )
+
+              }
+
+            </div>
+            
             <div className="relative" ref={userMenuRef}>
               {/* avatar toggle */}
             
@@ -124,9 +146,7 @@ function Navbar() {
               )}
             </div>
             {/* Hidden hamburger menu for mobile view */}
-    
-
-
+  
             <div 
             ref={hamburgerRef}
                    onClick={()=>{
