@@ -117,7 +117,7 @@ const {campaigns, loading}= useCampaigns();
           <div className="btn w-full flex justify-around space-x-4 px-2">
             <button
               onClick={() => setAmount("")}
-              className="cancel button w-1/2 !bg-gray-200 shadow-md !text-black hover:!bg-gray-300 hover:!border-0"
+              className="cancel button w-1/2 !bg-gray-200 shadow-md !text-black hover:!bg-gray-400 hover:!border-0"
             >
               Cancel
             </button>

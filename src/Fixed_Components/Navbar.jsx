@@ -100,7 +100,7 @@ function Navbar() {
 
             </div>
             {/* user dropdown menu  */}
-            <div className="group " ref={userMenuRef}>
+            <div className=" " ref={userMenuRef}>
               {/* avatar toggle */}
             
               <img
@@ -137,12 +137,12 @@ function Navbar() {
                   >
                     <img
                       src={hover_coin}
-                      className="absolute left-12 h-5 w-5 mr-2 mt-1 transform transition-opacity duration-200 ease-in group-hover:opacity-0"
+                      className="absolute left-12 h-5 w-5 mr-1 mt-1 transform transition-opacity duration-200 ease-in z-60 group-hover:hidden"
                     />
                     <img
                       src={coin}
                       alt="hover"
-                      className="h-5 w-5 mr-2 mt-1 "
+                      className="h-5 w-5 mr-1 group-hover:z-80 mt-1 "
                     />
                     Add Coins
                   </Link>

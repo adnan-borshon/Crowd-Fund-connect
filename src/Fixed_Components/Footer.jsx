@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Facebook from "/Icons/facebook.png";
 import Twitter from "/Icons/twitter.png";
 import Instagram from "/Icons/instagram-logo.png";
 import LinkedIn from "/Icons/linkedin.png";
 function Footer() {
+  const [Email, setEmail]= useState("");
   return (
     <section className="overflow-hidden bg-gray-900 mt-10 dark:bg-[#0e2442] border-b-2 border-gray-600 dark:border-gray-500">
       {/* whole footer container */}
@@ -90,12 +91,28 @@ function Footer() {
           <p className="text-gray-300 ">
             Stay updated with the latest news and events
           </p>
+          <form 
+            onSubmit={(e) => {
+    e.preventDefault(); 
+    
+    setEmail(""); 
+  }}
+  >
+            <div className="flex flex-col">
+
           <input
             type="email"
             placeholder="Your email address"
-            className="inputs"
-          />
-          <button className="button mt-2">Subscribe</button>
+            value={Email}
+            className="inputs !text-white"
+            onChange={(e) => setEmail(e.target.value)} 
+            />
+          <button 
+          type="submit"
+          
+          className="button mt-2">Subscribe</button>
+          </div>
+          </form>
         </div>
       </div>
       {/* copyright tag */}

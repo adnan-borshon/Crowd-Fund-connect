@@ -39,7 +39,7 @@ function AddCoins() {
             onClick={
               () => setAmount("")
             }
-            className="cancel button w-1/2 !bg-gray-200 shadow-md !text-black hover:!bg-gray-300 hover:!border-0"
+            className="cancel button w-1/2 !bg-gray-200 shadow-md !text-black hover:!bg-gray-400 hover:!border-0"
           >
             Cancel
           </button>

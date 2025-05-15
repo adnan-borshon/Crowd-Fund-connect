@@ -1,7 +1,7 @@
 
 
 import React, { useEffect, useState } from "react";
-
+import checked from "/Icons/checked.png";
 export default function CoinModal({ amount, toggleModal }) {
   const [visible, setVisible] = useState(false);
 
@@ -19,7 +19,12 @@ export default function CoinModal({ amount, toggleModal }) {
       <div
         className={`modal-content ${visible ? "opacity-100 scale-100" : "opacity-0 scale-90"}`}
       >
+
+       <div className="flex justify-start gap-1 items-center">
+<img src={checked} 
+className="h-5 2-5"/>
         <h2 className="h2">Coins Added</h2>
+        </div>
         <p className="p1">{`${amount} coins have been added to your account`}</p>
         <button
           onClick={toggleModal}

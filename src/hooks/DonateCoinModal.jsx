@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 
 import React, { useEffect, useState } from "react";
-
+import checked from "/Icons/checked.png";
+import error from "/Icons/error.png";
 
 export default function DonateCoinModal({ amount, toggleModal, checkFund }) {
   const [visible, setVisible] = useState(false);
@@ -22,7 +23,12 @@ export default function DonateCoinModal({ amount, toggleModal, checkFund }) {
       <div
         className={`modal-content ${visible ? "opacity-100 scale-100" : "opacity-0 scale-90"}`}
       >
+        <div className="flex justify-start gap-1 items-center">
+
+        <img src={`${hasFunds? `${checked}`:`${error}`}`}
+        className="h-5 w-5" />
         <h2 className="h2">{hasFunds ? "Donation Successful" : "Insufficient Coin"}</h2>
+        </div>
         <p className="p1">
           {hasFunds
             ? `${amount} coins have been donated.`

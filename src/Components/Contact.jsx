@@ -10,13 +10,16 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+   
     // Navigate to the contact page and pass the values as query parameters
     navigate(
       `/contact?name=${encodeURIComponent(name)}&email=${encodeURIComponent(
         email
       )}&message=${encodeURIComponent(message)}`
     );
+     setName("");
+    setEmail("");
+    setMessage("");
   };
   return (
     <>
