@@ -4,8 +4,26 @@ import Facebook from "/Icons/facebook.png";
 import Twitter from "/Icons/twitter.png";
 import Instagram from "/Icons/instagram-logo.png";
 import LinkedIn from "/Icons/linkedin.png";
+import { ToastContainer, toast, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function Footer() {
   const [Email, setEmail]= useState("");
+
+const notify = () => {
+      toast.success("Subscribed", {
+        theme: "light",
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+  
+        transition: Bounce,
+      });
+    };
+
   return (
     <section className="overflow-hidden bg-gray-900 mt-10 dark:bg-[#0e2442] border-b-2 border-gray-600 dark:border-gray-500">
       {/* whole footer container */}
@@ -57,7 +75,7 @@ function Footer() {
         {/* Quick links of footer */}
         <div className="flex flex-col gap-2 w-max">
           <h2 className="h2 color">Quick Links</h2>
-          <Link to="/home" className="text-gray-300 hover-effect-normal">
+          <Link to="/" className="text-gray-300 hover-effect-normal">
             Home
           </Link>
           <Link to="/about" className="text-gray-300 hover-effect-normal">
@@ -109,7 +127,7 @@ function Footer() {
             />
           <button 
           type="submit"
-          
+          onClick={notify}
           className="button mt-2">Subscribe</button>
           </div>
           </form>

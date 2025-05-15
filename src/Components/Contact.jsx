@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { ToastContainer, toast, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Contact() {
   const [name, setName] = useState("");
@@ -24,6 +26,20 @@ function Contact() {
     );
      }
   };
+    const notify = () => {
+      toast.success("Submitted", {
+        theme: "light",
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+  
+        transition: Bounce,
+      });
+    };
   return (
     <>
       {/*  Heading */}
@@ -93,11 +109,14 @@ function Contact() {
 
           {/* Submit button  */}
           <div>
-            <button type="submit" class="button w-full">
+            <button 
+            onClick={notify} 
+            type="submit" class="button w-full">
               Send Message
             </button>
           </div>
         </form>
+         <ToastContainer />
       </section>
     </>
   );
