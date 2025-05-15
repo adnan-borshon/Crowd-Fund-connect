@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useCampaigns } from '../Context/CampaignContext';
 import coin from "/Icons/coins.png";
 import { useCoin } from "../Context/CoinContext.jsx";
+import DonateCoinModal from '../hooks/DonateCoinModal.jsx';
 
 function Donate() {
 const {id} = useParams();
@@ -10,6 +11,13 @@ const {campaigns, loading}= useCampaigns();
   const { user, addCoins, removeCoins } = useCoin();
   const [amount, setAmount] = useState("");
   const [selectedCampaign, setSelectedCampaign] = useState("");
+
+  const [DonateModal, setDonateModal]= useState(false);
+  const [DonateAmount, setDonateAmount] = useState("");
+
+ const toggleModal= ()=>{
+        setDonateModal((prev)=>!prev);
+    }
 
   useEffect(() => {
     
@@ -20,7 +28,13 @@ const {campaigns, loading}= useCampaigns();
   if (loading) {
     return <p className="p-4 bg-black text-white ">Loading Campaigns...</p>;
   }
+
+  const checkFund=(amount)=>{
+    if(user.coins>=amount)return true;
+    else return false;
+  }
   return (
+    <>
    <section className='w-full flex justify-center  pt-10 pb-10'>
     <div className="container w-[90%] lg:w-[60%] gap-4 text-center grid lg:grid-cols-2">
 
@@ -109,7 +123,13 @@ const {campaigns, loading}= useCampaigns();
             </button>
             <button
               onClick={() => {
-                removeCoins(amount);
+                if(checkFund(amount)){
+                 toggleModal();
+                  removeCoins(amount);
+                }
+                else toggleModal();
+
+                setDonateAmount(amount);
                 setAmount("");
               }}
               className="donate button shadow-md w-1/2"
@@ -123,6 +143,11 @@ const {campaigns, loading}= useCampaigns();
 
     </div>
    </section>
+   {DonateModal &&
+     
+     <DonateCoinModal amount={DonateAmount} toggleModal={toggleModal} checkFund={checkFund}/>
+  }
+   </>
   );
 }
 

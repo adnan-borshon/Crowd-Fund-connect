@@ -15,6 +15,9 @@
 .dark p{
   @apply text-white;
 }
+.dark li{
+  @apply text-white;
+}
 .dark .container{
   @apply bg-gray-900 text-white;
 }
@@ -141,4 +144,19 @@ body {
 .hamburger{
   @apply h-1 w-10 rounded bg-[#348cff] my-2;
   @apply  duration-500;
+}
+
+.modal{
+  @apply z-50 relative ;
+}
+.overlay {
+  @apply fixed inset-0 bg-gray-800 z-40 transition-opacity duration-300 ease-in-out;
+}
+
+
+.modal-content {
+  @apply fixed flex flex-col space-y-2 z-50 bg-white rounded shadow-2xl p-6 max-w-sm w-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform transition-all duration-300 ease-in-out
+}
+.dark .modal-content{
+  @apply bg-gray-950;
 }

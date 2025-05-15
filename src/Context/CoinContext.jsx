@@ -49,7 +49,7 @@ export function CoinProvider({ children }) {
     if(user.coins >= amount){
     setUser((u) => ({ ...u, coins: u.coins - (+amount)})) 
     }
-  else alert("Insufficient Fund");
+ 
   };
 
  

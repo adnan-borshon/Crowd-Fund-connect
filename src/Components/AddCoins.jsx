@@ -1,12 +1,19 @@
 import React, { use, useState } from "react";
 import coin from "/Icons/coins.png";
 import { useCoin } from "../Context/CoinContext.jsx";
+import CoinModal from "../hooks/CoinModal.jsx";
 
 function AddCoins() {
   const { user, addCoins, removeCoins } = useCoin();
   const [amount, setAmount] = useState("");
+     const [modalOpen, setModalOpen]= useState(false);
+    const [ModalAmount, setModalAmount]= useState("");
+    const toggleModal= ()=>{
+        setModalOpen((prev)=>!prev);
+    }
 
   return (
+    <>
     <section className="text-center flex justify-center items-center h-[60vh]">
       <div className="container shrink-0 py-10 px-7 max-w-[80%] md:min-h-[80%] md:max-w-[30%] md:max-h-[80%] shadow-lg  space-y-4 border border-gray-300 rounded-lg bg-white">
         <div className="upper-part flex flex-col items-center">
@@ -29,7 +36,9 @@ function AddCoins() {
         </div>
         <div className="btn w-full flex justify-around space-x-4 px-2">
           <button
-            onClick={() => setAmount("")}
+            onClick={
+              () => setAmount("")
+            }
             className="cancel button w-1/2 !bg-gray-200 shadow-md !text-black hover:!bg-gray-300 hover:!border-0"
           >
             Cancel
@@ -37,6 +46,8 @@ function AddCoins() {
           <button
             onClick={() => {
               addCoins(amount);
+              setModalAmount(amount)
+              toggleModal();
               setAmount("");
             }}
             className="add button shadow-md w-1/2"
@@ -45,7 +56,13 @@ function AddCoins() {
           </button>
         </div>
       </div>
+     
     </section>
+     { modalOpen &&
+        <CoinModal amount={ModalAmount} toggleModal={toggleModal}/>}
+
+   
+     </>
   );
 }
 
