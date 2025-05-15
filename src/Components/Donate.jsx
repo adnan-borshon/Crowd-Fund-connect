@@ -3,7 +3,9 @@ import { useParams } from 'react-router-dom';
 import { useCampaigns } from '../Context/CampaignContext';
 import coin from "/Icons/coins.png";
 import { useCoin } from "../Context/CoinContext.jsx";
-import DonateCoinModal from '../hooks/DonateCoinModal.jsx';
+import DonateCoinModal from '../Modal/DonateCoinModal.jsx';
+ import { ToastContainer, toast , Bounce} from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 function Donate() {
 const {id} = useParams();
@@ -33,6 +35,36 @@ const {campaigns, loading}= useCampaigns();
     if(user.coins>=amount)return true;
     else return false;
   }
+
+  const notify= ()=>{
+    if(checkFund(amount)){
+      toast.success('Donation Successful', {
+position: "bottom-right",
+autoClose: 1000,
+hideProgressBar: false,
+closeOnClick: false,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "light",
+transition: Bounce,
+});
+    }
+    else {
+      toast.error('Donation Unsuccessful', {
+position: "bottom-right",
+autoClose: 1000,
+hideProgressBar: false,
+closeOnClick: false,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "light",
+transition: Bounce,
+});
+    }
+  }
+
   return (
     <>
    <section className='w-full flex justify-center  pt-10 pb-10'>
@@ -131,6 +163,7 @@ const {campaigns, loading}= useCampaigns();
 
                 setDonateAmount(amount);
                 setAmount("");
+                notify();
               }}
               className="donate button shadow-md w-1/2"
             >
@@ -142,6 +175,7 @@ const {campaigns, loading}= useCampaigns();
 </div>
 
     </div>
+    <ToastContainer/>
    </section>
    {DonateModal &&
      

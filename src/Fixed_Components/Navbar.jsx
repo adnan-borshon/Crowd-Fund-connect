@@ -49,8 +49,8 @@ function Navbar() {
   }, []);
   return (
     <>
-      <section className="navbar  fixed w-full top-0 z-50 shadow-lg">
-        <div className="container  flex justify-between lg:grid grid-cols-3 gap-2 p-3 bg-white dark:!bg-gray-950 shadow-lg dark:!shadow-gray-900 ">
+      <section className="navbar  fixed w-full top-0 z-50 bg-white dark:!bg-gray-950  shadow-lg">
+        <div className="container  flex justify-between lg:grid grid-cols-3 gap-2 p-3 bg-white dark:!bg-gray-950 dark:!shadow-gray-900 ">
           {/* Navigation part */}
           <div className="logo flex justify-start lg:ml-10 items-center">
             <img src={crowdFund_logo} className="h-10 w-10 object-cover mr-2"/>
@@ -81,7 +81,7 @@ function Navbar() {
           </div>
 
           {/* User profile with dropdown feature,dark mode and hamburger for mobile view */}
-          <div className="user-profile gap-2 flex justify-end items-center">
+          <div className=" gap-2 flex justify-end items-center">
             {/* dark mode */}
             <div 
             onClick={toggleTheme}
@@ -97,7 +97,6 @@ function Navbar() {
                 )
 
               }
-
             </div>
             {/* user dropdown menu  */}
             <div className=" " ref={userMenuRef}>
