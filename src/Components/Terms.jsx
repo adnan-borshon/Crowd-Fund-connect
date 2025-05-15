@@ -23,8 +23,8 @@ export default function TermsPage() {
     fetchTerms();
   }, []);
 
-  if (loading) return <p>Loading terms...</p>;
-  if (!termsData) return <p>Failed to load.</p>;
+  if (loading) return <p className="p-4 bg-black text-white w-screen h-screen flex justify-center items-center">Loading terms...</p>;
+  if (!termsData) return <p className="p-4 bg-black text-white w-screen h-screen flex justify-center items-center">Failed to load.</p>;
 
   return (
     <div className="max-w-3xl mx-auto p-6">

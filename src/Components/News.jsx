@@ -5,7 +5,7 @@ function News() {
   const { news, loading } = useNews();
 
   if (loading) {
-    return <p className="p-4 bg-black text-white ">Loading News...</p>;
+    return <p className="p-4 bg-black text-white w-screen h-screen flex justify-center items-center">Loading News...</p>;
   }
   return (
     <section className="overflow-hidden mx-5 flex flex-col items-center justify-center">

@@ -21,8 +21,8 @@ export default function PrivacyPolicy() {
     fetchPrivacy();
   }, []);
 
-  if (loading) return <p>Loading privacy policy...</p>;
-  if (!privacyData) return <p>Failed to load privacy policy.</p>;
+  if (loading) return <p className="p-4 bg-black text-white w-screen h-screen flex justify-center items-center">Loading privacy policy...</p>;
+  if (!privacyData) return <p className="p-4 bg-black text-white w-screen h-screen flex justify-center items-center">Failed to load privacy policy.</p>;
 
   return (
     <div className="max-w-3xl mx-auto p-6">
