@@ -1,29 +1,32 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const navigate = useNavigate(); // Initialize navigate for routing
+  const navigate = useNavigate(); 
+   const location = useLocation();
 
   const handleSubmit = (e) => {
+       setName("");
+    setEmail("");
+    setMessage("");
     e.preventDefault();
    
     // Navigate to the contact page and pass the values as query parameters
+     if (location.pathname === "/contact"){
     navigate(
       `/contact?name=${encodeURIComponent(name)}&email=${encodeURIComponent(
         email
       )}&message=${encodeURIComponent(message)}`
     );
-     setName("");
-    setEmail("");
-    setMessage("");
+     }
   };
   return (
     <>
-      {/* <!-- Heading --> */}
+      {/*  Heading */}
       <div className="contact-header  w-full flex flex-col justify-center items-center text-center mt-10">
         <h1 class="text-3xl font-extrabold dark:!text-[#348cff] text-gray-900 mb-4">
           Contact Us
@@ -39,9 +42,9 @@ function Contact() {
         id="contact"
         class="max-w-3xl mx-auto py-6 px-4 sm:px-6 lg:px-8"
       >
-        {/* <!-- Form --> */}
+        {/*  Form  */}
         <form class="space-y-6 ">
-          {/* <!-- Name field --> */}
+          {/*  Name field */}
           <div>
             <label for="name" class="block text-black">
               Name
@@ -51,11 +54,12 @@ function Contact() {
               id="name"
               name="name"
               placeholder="Your name"
-              class="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-800 placeholder-gray-400 focus:border-primary focus:ring-primary focus:outline-none focus:ring-2"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-800 placeholder-gray-400 focus:border-primary focus:ring-primary focus:outline-none focus:ring-2"
             />
           </div>
-          {/* 
-    <!-- Email field --> */}
+          {/*  Email field  */}
           <div>
             <label for="email" class="block  text-black">
               Email
@@ -65,7 +69,9 @@ function Contact() {
               id="email"
               name="email"
               placeholder="you@example.com"
-              class="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-800 placeholder-gray-400 focus:border-primary focus:ring-primary focus:outline-none focus:ring-2"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-800 placeholder-gray-400 focus:border-primary focus:ring-primary focus:outline-none focus:ring-2"
             />
           </div>
 
@@ -79,7 +85,9 @@ function Contact() {
               name="message"
               rows="4"
               placeholder="How can we help you?"
-              class="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-800 placeholder-gray-400 focus:border-primary focus:ring-primary focus:outline-none focus:ring-2"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-800 placeholder-gray-400 focus:border-primary focus:ring-primary focus:outline-none focus:ring-2"
             ></textarea>
           </div>
 
