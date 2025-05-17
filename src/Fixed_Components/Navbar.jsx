@@ -31,6 +31,8 @@ function Navbar() {
     function handleClickOutside(event) {
       if (userMenuRef.current && !userMenuRef.current.contains(event.target)) {
         setUserMenuOpen(false);
+        console.log(userMenuRef.current);
+        console.log(!userMenuRef.current.contains(event.target));
       }
       if (
         hamburgerBtnRef.current &&
@@ -39,14 +41,21 @@ function Navbar() {
   !hamburgerMenuRef.current.contains(event.target)
       ) {
         setHamburgerOpen(false);
+        console.log("For hamburger button");
+        console.log(hamburgerBtnRef.current);
+        console.log(!hamburgerBtnRef.current.contains(event.target));
+        console.log("For hamburger Menu");
+        console.log(hamburgerMenuRef.current);
+        console.log(!hamburgerMenuRef.current.contains(event.target));
       }
+  
     }
 
-    document.addEventListener("pointerdown", handleClickOutside);
+    if(hamburgerOpen || userMenuOpen)document.addEventListener("pointerdown", handleClickOutside);
 
     return () =>
       document.removeEventListener("pointerdown", handleClickOutside);
-  }, []);
+  }, [userMenuOpen, hamburgerOpen]);
   return (
     <>
       <section className="navbar  fixed w-full top-0 z-50 bg-white dark:!bg-gray-950  shadow-lg">
@@ -85,7 +94,7 @@ function Navbar() {
             {/* dark mode */}
             <div 
             onClick={toggleTheme}
-            className="darkMode relative cursor-pointer transform-view hover:scale-110">
+            className="darkMode  relative cursor-pointer transform-view hover:scale-110">
 
               {
                 theme=== "dark"? (
@@ -99,13 +108,13 @@ function Navbar() {
               }
             </div>
             {/* user dropdown menu  */}
-            <div className=" " ref={userMenuRef}>
+            <div className=" lg:mr-15"  ref={userMenuRef}>
               {/* avatar toggle */}
             
               <img
                 src={`${theme === "dark"? `${white_user_logo}`: `${user_logo}` }`}
                 alt="User"
-                className={`user-image  lg:mr-15 ${userMenuOpen ? 'bg-[#348cff]' : ''}`}
+                className={`user-image  ${userMenuOpen ? 'bg-[#348cff]' : ''}`}
                    onClick={() => {
                   setUserMenuOpen((open) => !open);
                   if (hamburgerOpen) {
@@ -117,7 +126,9 @@ function Navbar() {
                 
               {/* dropdown menu */}
               {userMenuOpen && (
-                <div className="absolute p-2 right-0 lg:right-15 flex flex-col justify-center  mt-2 w-50 bg-white border border-gray-400 dark:bg-gray-900 rounded shadow-lg z-20">
+                <div
+               
+                className="absolute p-2 right-0  lg:right-15 flex flex-col justify-center  mt-3 w-50 bg-white border border-gray-400 dark:bg-gray-900 rounded shadow-lg z-20">
                   <div className="px-4 py-2  ">
                     <p className=" font-semibold">Guest User</p>
                   </div>
